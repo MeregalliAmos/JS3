@@ -3,26 +3,25 @@
     <title>JS ES 3</title>
   </head>
   <body>
-    <h1>JS ES 2</h1>
+    <h1>JS ES 3</h1>
     <h2>Simple calculator with dynamic access to local storage</h2>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
     <fieldset>
-      <legend>Operazioni:</legend>
-      Numero: <input type="number" name="numero" /><br />
-      <input type="submit" name="btn1" value="Add" />
+      <legend id="leg1">Operazioni:</legend>
+      Numero: <input type="text" name="numero" id="Numero" /><br />
     </fieldset>
-    <div>
-        <span>
-            <table></table>
-        </span>
-    </div>
     <script>
-      <table id="tab1"></table>;
-      
-      $("#tab1").add($("#btn1").get("numero"));
+      var number = parseInt($("#Numero").val());
+      $("body").append(
+        $('<button id="btn1">Add</button>').click(function () {
+          $("#Div1").append(
+            $('<table id="tab1"><thead><tr><th></th></tr></thead></table>')
+          );
+          $("#tab1").attr("style", "background-color:rgb(253, 15, 178)");
+          $("#tab1").append(number);
+        })
+      );
     </script>
-
-    <script></script>
+    <div id="Div1"></div>
   </body>
 </html>
