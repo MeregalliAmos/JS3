@@ -1,27 +1,30 @@
 <html>
   <head>
     <title>JS ES 3</title>
+    <style>
+      table,
+      td,
+      th {
+        border: 1px solid black;
+      }
+    </style>
+    <body>
+      <h1>CALCOLATRICE</h1>
+      <table id="tab">
+        <tr>
+          <th>numero</th>
+        </tr>
+      </table>
+      <input type="number" id="num1" />
+      <button id="btn1">aggiungi</button>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script>
+        $("#btn1").click(function () {
+          var n1 = parseInt($("#num1").val());
+          var string = "<tr><td>" + n1 + "</tr></td>";
+          $("#tab").append(string);
+        });
+      </script>
+    </body>
   </head>
-  <body>
-    <h1>JS ES 3</h1>
-    <h2>Simple calculator with dynamic access to local storage</h2>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <fieldset>
-      <legend id="leg1">Operazioni:</legend>
-      Numero: <input type="text" name="numero" id="Numero" /><br />
-    </fieldset>
-    <script>
-      var number = parseInt($("#Numero").val());
-      $("body").append(
-        $('<button id="btn1">Add</button>').click(function () {
-          $("#Div1").append(
-            $('<table id="tab1"><thead><tr><th></th></tr></thead></table>')
-          );
-          $("#tab1").attr("style", "background-color:rgb(253, 15, 178)");
-          $("#tab1").append(number);
-        })
-      );
-    </script>
-    <div id="Div1"></div>
-  </body>
 </html>
