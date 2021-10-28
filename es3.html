@@ -12,19 +12,22 @@
       <h1>CALCOLATRICE</h1>
       <table id="tab">
         <tr>
-          <th>Numero</th>
+          <th>N1</th>
+          <th>Mark</th>
+          <th>N2</th>
+          <th>Result</th>
         </tr>
       </table>
-      <input type="number" id="num1" />
-      <button id="btn1">Aggiungi</button>
+      <input type="number" id="num1" placeholder="first number"/>
+    </br></br>
+    <input type="number" id="num2" placeholder="second number"/>
+    </br></br>
+      <button id="btnPlus">+</button>
+      <button id="btnSub">-</button>
+      <button id="btnMulti">*</button>
+      <button id="btnDivide">/</button>
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-      <script>
-        $("#btn1").click(function () {
-          var n1 = parseInt($("#num1").val());
-          var string = "<tr><td>" + n1 + "</tr></td>";
-          $("#tab").append(string);
-        });
-      </script>
+      <script src="es3.js"></script>
     </body>
   </head>
 </html>
