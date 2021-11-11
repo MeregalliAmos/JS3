@@ -1,3 +1,7 @@
+var myStorage = window.localStorage;
+for (let index = 0; index < localStorage.length; index++) {
+  $("#tab").append(localStorage.getItem(index));
+}
 $("#btnPlus").click(function () {
   calcolo("+");
 });
@@ -10,7 +14,7 @@ $("#btnMulti").click(function () {
 $("#btnDivide").click(function () {
   calcolo("/");
 });
-function calcolo(segno) {
+var calcolo= function (segno) {
   var input1 = $("#num1");
   var input2 = $("#num2");
   var n1 = parseInt(input1.val());
@@ -28,7 +32,7 @@ function calcolo(segno) {
     case "/":
         var risultato = n1 / n2;
         break;
-  }
+  };
   if (input1.val() && input2.val()) {
     var string =
     "<tr><td>" +
@@ -43,7 +47,8 @@ function calcolo(segno) {
     "<td>" +
     risultato +
     "</td></tr>";
-  $("#tab").append(string);
+    localStorage.setItem(localStorage.length, string)
+    $("#tab").append(string);
   input1.val("");
   input2.val("");
   }
