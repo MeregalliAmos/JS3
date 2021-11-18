@@ -47,8 +47,8 @@ var calcolo= function (segno) {
     "<td>" +
     risultato +
     "</td></tr>";
-    localStorage.setItem(localStorage.length, string)
-    $("#tab").append(string);
+  localStorage.setItem(localStorage.length, string)
+  $("#tab").append(string);
   input1.val("");
   input2.val("");
   }
